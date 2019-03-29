@@ -1,22 +1,16 @@
 <?php
 
-/**
- * una matriz a mano con valores que no sean los que identican a los jugadores
- */
+require_once 'Player.php';
+require_once 'Tateti.php';
 
-// rand x
-// rand y
-
-
-/* jug 1
- tengo que usar el (x,y) poner el  valor que sea para jug 1 'X'
-
-************************************************
-
- // rand x
-// rand y
+// create Players
+$players = [];
+$players[] = new Player(0, 'X', 'Ivan');
+$players[] = new Player(1, 'O', 'Pablo');
+//$players[] = new Player(2, 'Y', 'Alex');
 
 
-// jug 2
-tengo que usar el (x,y) poner el  valor que sea para jug 2 'O'
-*/
+//instancio juego
+$tateti = new Tateti($players);
+//echo json_encode($tateti);
+$tateti->run();
