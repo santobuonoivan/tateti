@@ -16,7 +16,7 @@ class Tateti
         $this->players = $players;
         $this->turnId = 0;
         $this->key = $this->players[$this->turnId]->getKey();
-
+        //echo " primera: $this->key";
     }
 
     public function play()
