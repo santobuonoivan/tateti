@@ -255,9 +255,20 @@ class BattleShipPlayer
                 <tr>
                     <td>                    
                         <table border='1'>
-                            <caption>{$this->getName()}</caption>";
-                                foreach ($this->table as $line) {
-                                    $respuesta.= "<tr>";
+                            <caption>{$this->getName()}</caption>                                
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>#</th>";
+                                    for ($i=0; $i < 10; $i++) { 
+                                        $respuesta.= "<th scope='col'>{$i}</th>";
+                                    }                     
+                                        
+                        $respuesta.="</tr>
+                                </thead>
+                                <tbody>";
+                                foreach ($this->table as $key => $line) {
+                                    $respuesta.= "<tr>
+                                                    <td scope='col'>$key</td>";
                                     foreach ($line as $item) {                
                                         if ($item ==='A') {
                                             $respuesta.= "<td bgcolor='blue'>▒</td>";
@@ -269,13 +280,24 @@ class BattleShipPlayer
                                     }
                                     $respuesta.= "</tr>";
                                 } 
-                        $respuesta.=    "</table>                        
+                        $respuesta.="</tbody></table>                        
                     </td>
                     <td>                    
                         <table border='1'>
-                            <caption>Enemy</caption>";
-                                foreach ($this->enemyTable as $line) {
-                                    $respuesta.= "<tr>";
+                            <caption>Enemy</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>#</th>";
+                                        for ($i=0; $i < 10; $i++) { 
+                            $respuesta.= "<th scope='col'>{$i}</th>";
+                                        }                     
+                                            
+                            $respuesta.="</tr>
+                                </thead>
+                                <tbody>";
+                                foreach ($this->enemyTable as $key2 => $line) {
+                                    $respuesta.= "<tr>
+                                            <td scope='col'>$key2</td>";
                                     foreach ($line as $item) {                
                                         if ($item ==='A') {
                                             $respuesta.= "<td bgcolor='blue'>▒</td>";
@@ -291,9 +313,9 @@ class BattleShipPlayer
                 </td>
             </tr>
         </table>";
-    echo $respuesta;   
-    /*   
-    $respuesta.= "
+        echo $respuesta;   
+        /*   
+        $respuesta.= "
         <table border='1'>
             <caption>{$this->getName()}</caption>";
         foreach ($this->table as $line) {

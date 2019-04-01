@@ -61,8 +61,14 @@ class BattleShip
                 //SHOT PLAYER 2
                     $shot = $this->playerB->sendShot();
                     $response = $this->playerA->receiveShot( $shot ) ;
-                    echo $response. "en: $shot" ;
-                    $this->playerB->printTable();
+                    
+                    
+                    
+                    //echo $response. "en: $shot" ;
+                    //$this->playerB->printTable();
+
+
+
                 // STATICS
 
                     $this->shots['B']['shots']++; //suma tiros
